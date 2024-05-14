@@ -23,45 +23,46 @@ Determine which education level appears most frequently in the dataset.
 
 ## Step-by-Step Instructions
 
-##### Step 1: Import the Relevant Module
+#### Step 1: Import the Relevant Module
 
 `import csv`
 `from collections import defaultdict`
 
-##### Step 2: Open the File and Create a List of Records
+#### Step 2: Open the File and Create a List of Records
 
-file_path = 'salaries.csv'
-records = []
+`file_path = 'salaries.csv'`
+`records = []`
 
-with open(file_path, mode='r') as file:
-    csv_reader = csv.DictReader(file)
-    for row in csv_reader:
-        records.append(row)
-Step 3: Identify the Unique Education Levels
-python
-Copy code
-education_levels = set()
+`with open(file_path, mode='r') as file:`
+    `csv_reader = csv.DictReader(file)`
+    `for row in csv_reader:`
+        `records.append(row)`
 
-for record in records:
-    education_levels.add(record['Education'])
-Step 4: Create a Frequency Table of Education Levels
-python
-Copy code
-education_frequency = defaultdict(int)
+#### Step 3: Identify the Unique Education Levels
 
-for record in records:
-    education_frequency[record['Education']] += 1
-Step 5: Identify the Most Common Education Level
-python
-Copy code
-most_common_education = max(education_frequency, key=education_frequency.get)
-Example Output
-python
-Copy code
-print("Education Frequency Table:")
-for education, frequency in education_frequency.items():
-    print(f"{education}: {frequency}")
+`education_levels = set()`
 
-print(f"Most Common Education Level: {most_common_education}")
-Conclusion
+`for record in records:`
+    `education_levels.add(record['Education'])`
+
+#### Step 4: Create a Frequency Table of Education Levels
+
+`education_frequency = defaultdict(int)`
+
+`for record in records:`
+    `education_frequency[record['Education']] += 1`
+
+#### Step 5: Identify the Most Common Education Level
+
+`most_common_education = max(education_frequency, key=education_frequency.get)`
+
+#### Example Output
+
+`print("Education Frequency Table:")`
+`for education, frequency in education_frequency.items():`
+    `print(f"{education}: {frequency}")`
+
+`print(f"Most Common Education Level: {most_common_education}")`
+
+# Conclusion
 This checkpoint ensures that you can read and process CSV data, extract specific information, and perform basic data analysis tasks such as creating a frequency table and identifying the most common value. By following the steps outlined above, you will be able to complete the task successfully.
